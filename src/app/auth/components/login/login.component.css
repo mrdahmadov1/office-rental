@@ -1,0 +1,118 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+.container header img.logo {
+  position: absolute;
+  top: 36px;
+  left: calc(50% - 51px);
+}
+
+.container header img.bg-auth {
+  opacity: 75%;
+}
+
+.sub-container {
+  position: absolute;
+  top: 144px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 60px 30px;
+  margin-bottom: 48px;
+
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.sub-container main .title {
+  color: #1E293B;
+  margin-bottom: 48px;
+}
+
+form input,
+form label {
+  display: block;
+  width: 100%;
+}
+
+form input:first-child {
+  margin-bottom: 32px;
+}
+
+form input {
+  border-bottom: 1px solid #CBD5E1;
+  padding: 10px 0;
+}
+
+form input:focus-visible {
+  border-bottom: 1px solid #1E293B;
+  outline: none;
+}
+
+form .forgotPassword {
+  margin-top: 6px;
+}
+
+form .forgotPassword a {
+  font-size: 14px;
+  color: #0A6BCB;
+}
+
+form .btnSubmit {
+  width: 100%;
+  margin-top: 52px;
+  padding: 10px 0;
+
+  border-radius: 4px;
+  background-color: #1E293B;
+  color: #fff;
+}
+
+.continueWith .info {
+  font-weight: 400;
+  color: #64748B;
+  margin: 38px 0 20px;
+}
+
+.continueWith button {
+  text-align: center;
+  width: 141px;
+  font-size: 14px;
+  padding: 10px 36px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border-radius: 4px;
+}
+
+.continueWith button img {
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+}
+
+footer {
+  font-size: 14px;
+}
+
+footer p {
+  color: #828282;
+  padding: 84px 0 48px;
+}
+
+footer p a {
+  font-weight: 500;
+  color: #000113;
+}
+
+form input.is-invalid {
+  border-bottom-color: rgb(246, 56, 56);
+}
+
+form input.is-invalid::placeholder {
+  color: rgb(246, 56, 56);
+  opacity: .75;
+}

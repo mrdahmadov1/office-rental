@@ -1,0 +1,36 @@
+<div class="container">
+  <header>
+    <img class="bg-auth" src="../../../assets/images/bg-auth.jpg" alt="bg-auth">
+    <img class="logo" src="../../../assets/images/logo.png" alt="logo">
+  </header>
+
+  <div class="sub-container bg-white">
+    <main>
+      <h1 class="title text-2xl font-bold text-center">Sign up</h1>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <!-- <label for="email">Email: </label> -->
+        <input [ngClass]="formSubmitted && registerForm.controls.email.invalid ? 'is-invalid':''" id="email"
+          type="email" placeholder="Email" formControlName="email">
+
+        <!-- <label for="username">Username: </label> -->
+        <input [ngClass]="formSubmitted && registerForm.controls.username.invalid ? 'is-invalid':''" id="username"
+          type="text" placeholder="Username" formControlName="username">
+
+        <!-- <label for="password">Password: </label> -->
+        <input [ngClass]="formSubmitted && (registerForm.controls.password.invalid || !passwordMatch) ? 'is-invalid':''"
+          id="password" type="password" placeholder="Password" formControlName="password">
+
+        <!-- <label for="confirmPassword">Confirm Password: </label> -->
+        <input
+          [ngClass]="formSubmitted && (registerForm.controls.confirmPassword.invalid || !passwordMatch) ? 'is-invalid':''"
+          id="confirmPassword" type="password" placeholder="Confirm Password" formControlName="confirmPassword">
+
+        <button type="submit" class="btnSubmit">Sign up</button>
+      </form>
+    </main>
+
+    <footer>
+      <p class="text-center">Already have account? <a routerLink="/login">Log In</a></p>
+    </footer>
+  </div>
+</div>

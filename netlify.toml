@@ -1,4 +1,0 @@
-[build]
-  command = "ng build"
-  # Clear cache on every build
-  environment = { NODE_MODULES_CACHE: "false" }

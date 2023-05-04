@@ -8,7 +8,6 @@ import {
 import firebase from 'firebase/compat/app';
 import { Router } from '@angular/router';
 import { FirebaseError } from 'firebase/app';
-import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -45,40 +44,10 @@ export class AuthService {
     } catch (error) {
       if (error instanceof FirebaseError) {
         if (error.code === 'auth/invalid-email') {
-          Swal.fire({
-            title: 'Error!',
-            text: 'Invalid email, MAN!',
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         } else if (error.code === 'auth/user-not-found') {
-          Swal.fire({
-            title: 'Error!',
-            text: 'User not found, MAN!',
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         } else if (error.code === 'auth/user-disabled') {
-          Swal.fire({
-            title: 'Error!',
-            text: 'User disabled, MAN!',
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         } else if (error.code === 'auth/wrong-password') {
-          Swal.fire({
-            title: 'Error!',
-            text: 'Wrong password, MAN!',
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         } else {
-          Swal.fire({
-            title: 'Error!',
-            text: `${error.message}, MAN!`,
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         }
       }
     }
@@ -95,40 +64,10 @@ export class AuthService {
     } catch (error) {
       if (error instanceof FirebaseError) {
         if (error.code === 'auth/invalid-email') {
-          Swal.fire({
-            title: 'Error!',
-            text: 'Invalid email, MAN!',
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         } else if (error.code === 'auth/email-already-in-use') {
-          Swal.fire({
-            title: 'Error!',
-            text: 'Email already in use, MAN!',
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         } else if (error.code === 'auth/operation-not-allowed') {
-          Swal.fire({
-            title: 'Error!',
-            text: 'Operation not allowed, MAN!',
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         } else if (error.code === 'auth/weak-password') {
-          Swal.fire({
-            title: 'Error!',
-            text: 'Weak password, MAN!',
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         } else {
-          Swal.fire({
-            title: 'Error!',
-            text: `${error.message}, MAN!`,
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         }
       }
     }
@@ -146,36 +85,13 @@ export class AuthService {
   async ForgotPassword(passwordResetEmail: string) {
     try {
       await this.afAuth.sendPasswordResetEmail(passwordResetEmail);
-      Swal.fire({
-        title: 'Email Sent',
-        text: 'Please, check your email',
-        icon: 'success',
-        confirmButtonText: 'Cool',
-      });
+
       this.router.navigate(['/auth/login']);
     } catch (error) {
       if (error instanceof FirebaseError) {
         if (error.code === 'auth/invalid-email') {
-          Swal.fire({
-            title: 'Error!',
-            text: 'Invalid email, MAN!',
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         } else if (error.code === 'auth/user-not-found') {
-          Swal.fire({
-            title: 'Error!',
-            text: 'User not found, MAN!',
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         } else {
-          Swal.fire({
-            title: 'Error!',
-            text: `${error.message}, MAN!`,
-            icon: 'error',
-            confirmButtonText: 'Cool',
-          });
         }
       }
     }

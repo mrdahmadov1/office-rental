@@ -1,45 +1,42 @@
-<div class="container">
-  <header>
-    <img class="bg-auth" src="../../../assets/images/bg-auth.jpg" alt="bg-auth">
-    <img class="logo" src="../../../assets/images/logo.png" alt="logo">
-  </header>
+<div class="bg">
+  <div class="container">
+    <div class="sub-container bg-white">
+      <main>
+        <h1 class="title text-2xl font-bold text-center">Login</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <!-- <label for="email">Email: </label> -->
+          <input [ngClass]="formSubmitted && loginForm.controls.email.invalid ? 'is-invalid':''" id="email" type="email"
+            placeholder="Email" formControlName="email">
 
-  <div class="sub-container bg-white">
-    <main>
-      <h1 class="title text-2xl font-bold text-center">Login</h1>
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <!-- <label for="email">Email: </label> -->
-        <input [ngClass]="formSubmitted && loginForm.controls.email.invalid ? 'is-invalid':''" id="email" type="email"
-          placeholder="Email" formControlName="email">
+          <!-- <label for="password">Password: </label> -->
+          <input [ngClass]="formSubmitted && loginForm.controls.password.invalid  ? 'is-invalid':''" id="password"
+            type="password" placeholder="Password" formControlName="password">
 
-        <!-- <label for="password">Password: </label> -->
-        <input [ngClass]="formSubmitted && loginForm.controls.password.invalid  ? 'is-invalid':''" id="password"
-          type="password" placeholder="Password" formControlName="password">
+          <div class="forgotPassword text-right">
+            <a routerLink="/forgot-password">Forgot password?</a>
+          </div>
 
-        <div class="forgotPassword text-right">
-          <a routerLink="/forgot-password">Forgot password?</a>
+          <button type="submit" class="btnSubmit">Log In</button>
+        </form>
+
+        <div class="continueWith">
+          <p class="info text-center">Or continue with</p>
+          <div class="flex justify-between justify-around">
+            <button class="flex items-center">
+              <img src="../../../assets/images/google.png" alt="Google">
+              Google
+            </button>
+            <button class="flex items-center">
+              <img src="../../../assets/images/facebook.png" alt="Facebook">
+              Facebook
+            </button>
+          </div>
         </div>
+      </main>
 
-        <button type="submit" class="btnSubmit">Log In</button>
-      </form>
-
-      <div class="continueWith">
-        <p class="info text-center">Or continue with</p>
-        <div class="flex justify-between">
-          <button class="flex items-center">
-            <img src="../../../assets/images/google.png" alt="Google">
-            Google
-          </button>
-          <button class="flex items-center">
-            <img src="../../../assets/images/facebook.png" alt="Facebook">
-            Facebook
-          </button>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <p class="text-center">Don't have account? <a routerLink="/register">Create now</a></p>
-    </footer>
+      <footer>
+        <p class="text-center">Don't have account? <a routerLink="/register">Create now</a></p>
+      </footer>
+    </div>
   </div>
 </div>

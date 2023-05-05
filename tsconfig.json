@@ -1,7 +1,7 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
-  "include": ["src/**/*.ts", "typings/index.d.ts", "typing.d.ts"],
+  "include": ["src/**/*.ts", "typings/index.d.ts", "src/typing.d.ts"],
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -17,6 +17,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "typeRoots": ["node_modules/@types", "src/alertifytype.d.ts"],
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
